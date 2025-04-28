@@ -3,7 +3,7 @@ use axum::{
     response::Html,
     routing::get,
     Router,
-    serve, // correcto
+    serve,
 };
 use rand::seq::SliceRandom;
 use serde::Deserialize;
@@ -18,6 +18,8 @@ struct Recipe {
     instructions: String,
 }
 
+
+#[derive(Template)]
 #[template(path = "recipe.html")]
 struct RecipeTemplate {
     title: String,
